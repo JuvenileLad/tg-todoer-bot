@@ -1,0 +1,9 @@
+config.ini
+todoer/todoer_bot.session
+todoer_bot.session
+todoer/__pycache__
+todoer/core/__pycache__
+todoer/utils/__pycache__
+todoer/plugins/__pycache__
+todoer/todoer_bot.session-journal
+todoer_bot.session-journal
