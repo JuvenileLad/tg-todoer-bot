@@ -4,8 +4,8 @@ from .db_handler import Task
 from .formatter import msg_formatter 
 
 async def newTask(message):
-	text = msg_formatter(f"`{message.text}`", 'PENDING', f'#{message.text[0]}{message.message_id+1}')
-	task_id = message.message_id + 1
+	text = msg_formatter(f"`{message.text}`", 'PENDING', f'#{message.text[0]}{message.id+1}')
+	task_id = message.id + 1
 	user_id = message.from_user.id
 	task = Task(user_id, task_id)
 	task.add_task()

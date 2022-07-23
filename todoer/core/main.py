@@ -28,6 +28,6 @@ async def task_btn(app, cb :callback_query):
 
 	task = re.findall('\n\n([^╘]*)\n\n', cb.message.text)[0]
 
-	text = msg_formatter(f"`{task}`", cb_type.upper(), f"#{task[0]}{cb.message.message_id+1}")
+	text = msg_formatter(f"`{task}`", cb_type.upper(), f"#{task[0]}{cb.message.id+1}")
 	await cb.answer(text=alert_text)
 	await cb.message.edit_text(text)
