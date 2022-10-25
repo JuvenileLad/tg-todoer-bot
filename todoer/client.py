@@ -1,14 +1,15 @@
-import configparser, pymongo
+import os, pymongo
+from dotenv import load_dotenv
+from yaml import load
+load_dotenv(dotenv_path=f"{os.getcwd()}/config.env")
 from pyrogram import Client
-config = configparser.ConfigParser()
-config.read('config.ini')
 
-session = config['pyrogram']['session_name']
-api_id = int(config['pyrogram']['api_id'])
-api_hash = config['pyrogram']['api_hash']
-bot_token = config['pyrogram']['bot_token']
+session = os.getenv('SESSION_NAME')
+api_id = os.getenv('API_HASH')
+api_hash = os.getenv('API_ID')
+bot_token = os.getenv('BOT_TOKEN')
 
-mongodb = config['MONGODB']['url']
+mongodb = os.getenv('MONGO_URL')
 
 client = pymongo.MongoClient(host=mongodb)
 mydb = client["TestDB"]

@@ -1,4 +1,5 @@
 config.ini
+config.env
 todoer/todoer_bot.session
 todoer_bot.session
 todoer/__pycache__

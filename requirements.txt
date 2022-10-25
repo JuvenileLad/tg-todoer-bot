@@ -3,3 +3,4 @@ pymongo[srv]
 configparser
 TgCrypto
 pymongo
+python-dotenv
