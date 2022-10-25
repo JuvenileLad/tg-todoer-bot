@@ -3,7 +3,6 @@
     "description": "A telegram bot for saving your daily Tasks with an RPG-style twist.",
     "keywords": ["utility", "telegram"],
     "repository": "https://github.com/juvenileLad/tg-todoer-bot",
-    "stack": "container",
     "env": {
         "SESSION_NAME": {
             "description": "Session string (pyrogram)",

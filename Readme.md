@@ -60,7 +60,9 @@ pip3 install -U -r requirements.txt
 3) MongoDB
 	- Follow [this guide](https://telegra.ph/How-to-get-MongoDB-URL-02-04)
 	<br>
-  
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/JuvenileLad/tg-todoer-bot)
+
 ### <div id="config">Configuration</div>
 copy the contents of `example_config.ini` to a new file `config.ini` and then edit the following values:
 *(do not add quotes(" ") symbol in any value)*
