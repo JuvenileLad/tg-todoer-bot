@@ -1,6 +1,5 @@
 import os, pymongo
 from dotenv import load_dotenv
-from yaml import load
 load_dotenv(dotenv_path=f"{os.getcwd()}/config.env")
 from pyrogram import Client
 
