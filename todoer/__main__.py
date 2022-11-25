@@ -1,7 +1,7 @@
 from pyrogram import idle 
-from todoer.client import app
+from todoer.client import app, version, session
 
 app.start()
-print("<Initialized>")
+print(f"Initialised {session} v{version}")
 idle()
 app.stop()

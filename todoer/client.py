@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 load_dotenv(dotenv_path=f"{os.getcwd()}/config.env")
 from pyrogram import Client
 
+version = os.getenv('VERSION')
 session = os.getenv('SESSION_NAME')
 api_id = os.getenv('API_ID')
 api_hash = os.getenv('API_HASH')
