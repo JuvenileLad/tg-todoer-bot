@@ -8,6 +8,7 @@ from ..plugins.list import list_tasks
 from ..plugins.leaderboard import _leaderboard
 from ..plugins.start_menu import startm
 from ..plugins.help_menu import helpm
+from ..plugins.shop_front import shop
 
 @app.on_message(filters.command("help"))
 async def start(_, message):

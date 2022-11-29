@@ -44,20 +44,21 @@ class Points:
         full, empty = '▰', '▱'
         total = (full * HP)+((10-HP)*empty)
         return total
+
+    # def checkHP(user_id):
+    #     a = myColl.find_one({"_id":user_id})
+    #     hp = a['HP']
+    #     return hp
         
-    def checkHP(user_id):
-        a = myColl.find_one({"_id":user_id})
-        hp = a['HP']
-        return hp
-    def genRandom(min, max):
-        return random.randint(min, max)
+    # def genRandom(min, max):
+    #     return random.randint(min, max)
 
     def reset(user_id):
         myColl.update_one({"_id": user_id}, {"$set": {"HP": 100, "Coins": 0}})
     
     def current(user_id, type):
         a = myColl.find_one({"_id": user_id})
-        return a['HP']
+        return a[type]
     
     def add(user_id, type, amount):
         a = myColl.find_one({"_id": user_id})
@@ -79,24 +80,24 @@ class Task:
 
     def add_task(self):
         if not self.user:
-            myColl.insert_one({"_id": self.userID, "tasks": [self.taskID], "HP": 100, "Coins": 0})
+            myColl.insert_one({"_id": self.userID, "tasks": [self.taskID], "HP": 100, "Coins": 0, "Mana":0})
         if self.user and not self.task:
             myColl.update_one({"_id": self.userID}, {"$push": {"tasks": self.taskID}})
 
     def remove_task(self, type):
         if self.user and self.task:
-            hp = Points.checkHP(self.userID)
+            hp = Points.current(self.userID, 'HP')
             if hp<=0:
                 Points.reset(self.userID)
                 return "HP & Coins reset!"
             if type == 'done':
-                amount = Points.genRandom(1, 5)
+                amount = random.randint(1, 5)
                 text = Points.add(self.userID, 'Coins', amount)
             elif type == 'missed':
-                amount = Points.genRandom(10, 20)
+                amount = random.randint(10, 20)
                 text = Points.sub(self.userID, 'HP', amount)
             elif type == 'postponed':
-                amount = Points.genRandom(1, 3)
+                amount = random.randint(1, 3)
                 text = Points.sub(self.userID, 'Coins', amount)
             myColl.update_one({"_id": self.userID}, {"$pull": {"tasks": int(self.taskID)}})
             return text
