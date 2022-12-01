@@ -24,7 +24,7 @@ def get_leaderboard():
     unordered = {}
     leaderboard = {}
     for i in myColl.find():
-        unordered[i['_id']] = i['Coins']
+        unordered[i['_id']] = i['Mana']
     for key in sorted(unordered.values(), reverse=True):
         # list(unordered.values()) - convert to list
 

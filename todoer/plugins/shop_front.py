@@ -33,11 +33,9 @@ async def buy_cb(app, cb:callback_query):
         alert = await buy_item(data, cb.from_user.id)
         await cb.answer(alert)
 
-
-    original_text = cb.message.text
-    original_coins = int(re.findall("(?<=\💰[ \t])(.*?)(?=\])", original_text)[0])
-    original_coins = f"💰 {original_coins}"
-    player_coins = str(Points.current(cb.from_user.id, 'Coins'))
-    new_text = re.sub(original_coins, f"💰 {player_coins}", original_text)
-    await app.edit_message_text(chat_id=cb.from_user.id, message_id=cb.message.id, text=new_text, reply_markup = cb.message.reply_markup)
-
+        original_text = cb.message.text
+        original_coins = int(re.findall("(?<=\💰[ \t])(.*?)(?=\])", original_text)[0])
+        original_coins = f"💰 {original_coins}"
+        player_coins = str(Points.current(cb.from_user.id, 'Coins'))
+        new_text = re.sub(original_coins, f"💰 {player_coins}", original_text)
+        await app.edit_message_text(chat_id=cb.from_user.id, message_id=cb.message.id, text=new_text, reply_markup = cb.message.reply_markup)

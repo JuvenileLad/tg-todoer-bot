@@ -16,7 +16,7 @@ async def _leaderboard(message):
 	text = ''''''
 	rn = 10 if len(users_ls) > 10 else len(users_ls) # only the top 10 will be shown
 	for n in range(rn):
-		text += f"@{users_ls[n].username} : 💰{user_coins[n]}\n"
+		text += f"@{users_ls[n].username} : 🔮{user_coins[n]}\n"
 	text = msg_formatter(text, 'LEADERBOARD', f"TOTAL: {rn}")
 	if len(text) < 1:
 		text = "There are no users"

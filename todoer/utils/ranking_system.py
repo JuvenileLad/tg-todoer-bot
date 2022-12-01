@@ -1,6 +1,16 @@
 class RankingSystem:
-    def __init__(self):
-        self.rank_list = {0:'Unranked',1:'Aleph', 2:'Bet', 3:'Gimmel', 4:'Daleth'}
+    def __init__(self, Mana):
+        self.rank_list = {1:'Unranked',90:'Aleph', 178:'Bet', 266:'Gimmel', 354:'Daleth'}
+        self.Mana = Mana
     
-    def RankUp(self, CurrentRank_int):
-        return self.rank_list[CurrentRank_int+1]
+    def getRank(self):
+        num = 0
+        for RequiredMana in self.rank_list:
+            num+=1
+            if self.Mana == RequiredMana:
+                playerRank = self.rank_list[RequiredMana]
+                break
+            if self.Mana > RequiredMana and self.Mana < (2+(num*((88)))-RequiredMana)+RequiredMana:
+                playerRank = self.rank_list[RequiredMana]
+                break
+        return playerRank
