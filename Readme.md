@@ -1,5 +1,6 @@
 # Telegram Todoer Bot
 ## A telegram bot for saving your daily Tasks with an RPG-style twist.
+### {outdated Readme}
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/JuvenileLad/Telegram-todoer-bot)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?&style=flat-square)](https://github.com/JuvenileLad/Telegram-todoer-bot#copyright--license)
 <h2 align="center"><b>Owner: <a href="https://telegram.dog/juve_watson">Juvenile Lad</a></b><br>
