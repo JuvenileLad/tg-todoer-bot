@@ -14,7 +14,7 @@ hebrew_font = ImageFont.truetype(f'{os.getcwd()}/todoer/utils/resources/Heb.otf'
 @app.on_message(filters.command("status"))
 async def status(_, message):
 	user_data = await status_window(message) #status plugin
-	img = await status_image(user_data, message.from_user.first_name)
+	await status_image(user_data, message.from_user.first_name)
 	await app.send_photo(message.from_user.id, photo=f'{os.getcwd()}/todoer/utils/resources/new_status.png', caption='__Devil-In-The-Slot-666 has measured your magical aptitude__')
 	# TODO upload image with text
 
@@ -43,7 +43,7 @@ async def status_image(user_data, username):
 
 	await hp_bar(user_data[0]//10, base_img.size)
 	await rank_text(user_data[3], base_img)
-	await Draw_coin_mana(str(user_data[1]), str(user_data[2]), base_img)
+	await Draw_coin_mana(str(user_data[2]), str(user_data[1]), base_img)
 	hp_bar_img = Image.open(f'{os.getcwd()}/todoer/utils/resources/hp_bar.png')
 	base_img.paste(hp_bar_img, mask=hp_bar_img)
 	base_img.save(f'{os.getcwd()}/todoer/utils/resources/new_status.png') 
