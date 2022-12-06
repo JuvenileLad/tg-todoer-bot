@@ -4,3 +4,4 @@ configparser
 TgCrypto
 pymongo
 python-dotenv
+pillow
