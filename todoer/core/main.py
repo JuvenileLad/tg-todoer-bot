@@ -24,7 +24,7 @@ async def task_btn(app, cb :callback_query):
 	cb_type = cb.data.split("_")[0]
 	alert_text = await remove_task(cb, cb_type)
 
-	task = re.findall('\n\n([^╘]*)\n\n', cb.message.text)[0]
+	task = re.findall('\n([^╘]*)\n', cb.message.text)[0]
 
 	text = msg_formatter(f"`{task}`", cb_type.upper(), f"#{task[0]}{cb.message.id+1}")
 	await cb.answer(text=alert_text)
