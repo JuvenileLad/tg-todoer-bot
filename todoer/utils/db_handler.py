@@ -54,7 +54,7 @@ class Points:
     #     return random.randint(min, max)
 
     def reset(user_id):
-        myColl.update_one({"_id": user_id}, {"$set": {"HP": 100, "Coins": 0}})
+        myColl.update_one({"_id": user_id}, {"$set": {"HP": 100, "Coins": 0, "Mana" : 0}})
     
     def current(user_id, type):
         a = myColl.find_one({"_id": user_id})
