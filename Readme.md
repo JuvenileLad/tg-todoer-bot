@@ -18,8 +18,8 @@
 
 - Various [task-actions](#task-actions) have varied effects on the Player's HP and Coins:
 
-	- Completing a task (marking it as `Done`) will increase the Player's Coins by a random value between 1-5
-	- Not completing a task (marking as `Missed`) will decrease the Player's HP by a random value between 10-20
+	- Completing a task (`Done`) will increase the Player's Coins by a random value between 1-5
+	- Not completing a task (`Missed`) will decrease the Player's HP by a random value between 10-20
 	- `Postponed` task will decrease the Player's Coins by a random value between 1-3
 
 - Coins can be used to purchase Mana Potion from the shop. The Mana determines a Player's position in the leaderboard.
