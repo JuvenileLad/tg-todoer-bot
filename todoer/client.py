@@ -10,7 +10,7 @@ api_hash = os.getenv('API_HASH')
 bot_token = os.getenv('BOT_TOKEN')
 
 mongodb = os.getenv('DATABASE_URL')
-
+# Initialise the mongodb connection
 client = pymongo.MongoClient(host=mongodb)
 mydb = client["TestDB"]
 myColl = mydb["todoerTest"]

@@ -1,7 +1,7 @@
 from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup)
 from ..client import app
 from .db_handler import Task
-from .formatter import msg_formatter 
+from .format_text import msg_formatter 
 
 async def newTask(message):
 	text = msg_formatter(f"`{message.text}`", 'PENDING', f'#{message.text[0]}{message.id+1}')
@@ -22,8 +22,6 @@ async def remove_task(cb, cb_type):
 	
 	text = task.remove_task(cb_type)
 	return text
-	# print(f"Task Type: {cb_type}\nTask ID: {task_id}")
-
 
 
 

@@ -3,16 +3,13 @@ from pyrogram.types.bots_and_keyboards import callback_query
 import re
 from ..client import app
 from ..utils.task_handler import newTask, remove_task, msg_formatter
+# import plugins here
 from ..plugins.status import status_window
 from ..plugins.list import list_tasks
 from ..plugins.leaderboard import _leaderboard
 from ..plugins.start_menu import startm
 from ..plugins.help_menu import helpm
 from ..plugins.shop_front import shop
-
-@app.on_message(filters.command("help"))
-async def start(_, message):
-	await message.reply_text("help is here!")
 
 @app.on_message(filters.text)
 async def task(_, message):

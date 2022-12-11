@@ -45,14 +45,6 @@ class Points:
         total = (full * HP)+((10-HP)*empty)
         return total
 
-    # def checkHP(user_id):
-    #     a = myColl.find_one({"_id":user_id})
-    #     hp = a['HP']
-    #     return hp
-        
-    # def genRandom(min, max):
-    #     return random.randint(min, max)
-
     def reset(user_id):
         myColl.update_one({"_id": user_id}, {"$set": {"HP": 100, "Coins": 0, "Mana" : 0}})
     
@@ -76,7 +68,6 @@ class Task:
         self.taskID = task_id
         self.user = user_inDB(user_id) 
         self.task = task_inDB(user_id, task_id) if self.user else False
-        # print(f"User: {self.user}, Task: {self.task}")
 
     def add_task(self):
         if not self.user:
@@ -89,7 +80,7 @@ class Task:
             hp = Points.current(self.userID, 'HP')
             if hp<=0:
                 Points.reset(self.userID)
-                return "HP & Coins reset!"
+                return "HP, Coins & Mana reset!"
             if type == 'done':
                 amount = random.randint(1, 5)
                 text = Points.add(self.userID, 'Coins', amount)
